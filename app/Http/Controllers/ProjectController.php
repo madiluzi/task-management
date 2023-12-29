@@ -3,7 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\Http\Resources\ProjectCollection;
+use App\Models\Module;
+use App\Models\Page;
 use App\Models\Project;
+use App\Models\Status;
+use App\Models\Task;
 use Illuminate\Http\Request;
 use Inertia\Inertia;
 use Inertia\Response;
@@ -52,8 +56,20 @@ class ProjectController extends Controller
      */
     public function show(Project $project)
     {
-        return Inertia::render('Projects/Index', [
+        $status = Status::all();
+        $allTasksPerStatus = [];
+        foreach ($status as $key => $value) {
+            $taskPerStatus = Task::where('status_id', $value->id)->get();
+            $allTasksPerStatus[$value->id] = $taskPerStatus;
+        }
+
+        return Inertia::render('Projects/Detail', [
             'project' => $project,
+            'tasks' => Task::all(),
+            'modules' => Module::all(),
+            'pages' => Page::all(),
+            'status' => Status::all(),
+            'tasksPerStatus' => $allTasksPerStatus
         ]);
     }
 

@@ -23,6 +23,9 @@
         "@ckeditor/ckeditor5-build-classic": "^40.1.0",
         "@ckeditor/ckeditor5-react": "^6.2.0",
         "lucide-react": "^0.292.0",
-        "react-select": "^5.8.0"
+        "react-select": "^5.8.0",
+        "react-sortablejs": "^6.1.4",
+        "sortablejs": "^1.15.1",
+        "web-animations-js": "^2.3.2"
     }
 }

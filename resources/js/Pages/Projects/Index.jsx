@@ -2,7 +2,7 @@ import React from 'react';
 import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout';
 import { Head, Link, useForm } from '@inertiajs/react';
 import { Pagination } from '@/Components/Pagination';
-import { FileEdit, Trash2 } from 'lucide-react';
+import { FileEdit, Folder, FolderTree, ListTodo, Trash2 } from 'lucide-react';
 
 export default function Index(props) {
     const { delete: destroy } = useForm()
@@ -72,6 +72,59 @@ export default function Index(props) {
                         </table>
                     </div>
                     <Pagination meta={props.projects.meta} />
+                    <div className="grid grid-cols-3 gap-4">
+                        {
+                            props.projects ?
+                                props.projects.data.map((item, key) =>
+                                    <Link
+                                        key={key}
+                                        href={route("projects.show", item.id)}
+                                        className="p-4 bg-white border rounded-lg border-slate-200"
+                                    >
+                                        <div className="flex justify-between">
+                                            <div className="flex items-center justify-center w-8 h-8 mb-4 text-indigo-500 bg-indigo-100 rounded">
+                                                <Folder className="w-4 h-4" />
+                                            </div>
+                                            <div>
+                                                <span className="px-2 py-1 ml-4 text-xs font-semibold text-indigo-500 bg-indigo-100 rounded">
+                                                    {/* {item.status.title} */}
+                                                </span>
+                                            </div>
+                                        </div>
+                                        <div className="mb-2">
+                                            <p className="text-sm font-semibold text-slate-700">
+                                                {item.title}
+                                            </p>
+                                            <p className="text-sm font-medium text-slate-400">
+                                                {/* {item.type.title} */}
+                                            </p>
+                                        </div>
+                                        <div className="flex justify-between mb-2">
+                                            <div className="flex items-center justify-center gap-2">
+                                                <FolderTree className="w-3 h-3 text-indigo-500" />
+                                                <p className="text-xs font-semibold text-slate-500">
+                                                    {Math.floor(Math.random() * 20) + 1}/30
+                                                </p>
+                                            </div>
+                                            <div className="flex items-center justify-center gap-2">
+                                                <ListTodo className="w-3 h-3 text-indigo-500" />
+                                                <p className="text-xs font-semibold text-slate-500">
+                                                    {Math.floor(Math.random() * 5) + 1}/10
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <div className="flex items-center gap-4">
+                                            <div className="w-full h-1 bg-indigo-100 rounded">
+                                                <div className="h-1 w-[50%] rounded bg-indigo-500"></div>
+                                            </div>
+                                            <p className="text-xs font-semibold text-slate-500">50%</p>
+                                        </div>
+                                    </Link>
+                                )
+                                :
+                                <h1>no data</h1>
+                        }
+                    </div>
                 </div>
             </div>
         </AuthenticatedLayout>

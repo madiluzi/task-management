@@ -2,11 +2,11 @@
 
 namespace Database\Seeders;
 
-use App\Models\Module;
+use App\Models\Priority;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
-class ModuleSeeder extends Seeder
+class PrioritySeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -15,25 +15,21 @@ class ModuleSeeder extends Seeder
     {
         $data = [
             [
-                'title' => 'Module ABC',
-                'project_id' => 1,
+                'name' => 'Low',
             ],
             [
-                'title' => 'Module 123',
-                'project_id' => 2,
+                'name' => 'Medium',
             ],
             [
-                'title' => 'Test Module',
-                'project_id' => 3,
+                'name' => 'High',
             ],
             [
-                'title' => 'Module Test',
-                'project_id' => 4,
+                'name' => 'Urgent',
             ]
         ];
 
         foreach ($data as $key => $row){
-            Module::create($row);
+            Priority::create($row);
         }
     }
 }

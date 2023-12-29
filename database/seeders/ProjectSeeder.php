@@ -13,9 +13,41 @@ class ProjectSeeder extends Seeder
      */
     public function run(): void
     {
-        Project::create([
-            'title' => 'Project ABC',
-            'user_id' => 1
-        ]);
+        $data = [
+            [
+                'title' => 'Project ABC',
+                'user_id' => 1,
+                'priority_id' => 2,
+                'status_id' => 4,
+            ],
+            [
+                'title' => 'Project 123',
+                'user_id' => 1,
+                'priority_id' => 3,
+                'status_id' => 2,
+            ],
+            [
+                'title' => 'Test Project',
+                'user_id' => 1,
+                'priority_id' => 1,
+                'status_id' => 3,
+            ],
+            [
+                'title' => 'Project A1',
+                'user_id' => 1,
+                'priority_id' => 1,
+                'status_id' => 4,
+            ],
+            [
+                'title' => 'Project Qwerty',
+                'user_id' => 1,
+                'priority_id' => 2,
+                'status_id' => 1,
+            ]
+        ];
+
+        foreach ($data as $key => $row){
+            Project::create($row);
+        }
     }
 }

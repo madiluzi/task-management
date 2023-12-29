@@ -2,11 +2,11 @@
 
 namespace Database\Seeders;
 
-use App\Models\Module;
+use App\Models\Status;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
-class ModuleSeeder extends Seeder
+class StatusSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -15,25 +15,27 @@ class ModuleSeeder extends Seeder
     {
         $data = [
             [
-                'title' => 'Module ABC',
-                'project_id' => 1,
+                'name' => 'Active',
             ],
             [
-                'title' => 'Module 123',
-                'project_id' => 2,
+                'name' => 'In Progress',
             ],
             [
-                'title' => 'Test Module',
-                'project_id' => 3,
+                'name' => 'Completed',
             ],
             [
-                'title' => 'Module Test',
-                'project_id' => 4,
+                'name' => 'Pending',
+            ],
+            [
+                'name' => 'Cancelled',
+            ],
+            [
+                'name' => 'Closed',
             ]
         ];
 
         foreach ($data as $key => $row){
-            Module::create($row);
+            Status::create($row);
         }
     }
 }

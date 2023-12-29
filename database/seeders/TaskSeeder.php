@@ -13,10 +13,32 @@ class TaskSeeder extends Seeder
      */
     public function run(): void
     {
-        Task::create([
-            'content' => 'Task ABC',
-            'project_id' => 1,
-            'module_id' => 1,
-        ]);
+        $data = [
+            [
+                'content' => 'Task ABC',
+                'project_id' => 1,
+                'module_id' => 1,
+                'status_id' => 4,
+            ], [
+                'content' => 'Task 123',
+                'project_id' => 2,
+                'module_id' => 2,
+                'status_id' => 1,
+            ], [
+                'content' => 'Task Test',
+                'project_id' => 2,
+                'module_id' => 1,
+                'status_id' => 4,
+            ], [
+                'content' => 'Tasks',
+                'project_id' => 1,
+                'module_id' => 3,
+                'status_id' => 2,
+            ]
+        ];
+
+        foreach ($data as $key => $row){
+            Task::create($row);
+        }
     }
 }
