@@ -13,4 +13,14 @@ class Status extends Model
     {
         return $this->hasMany(Project::class);
     }
+
+    public function modules(): HasMany
+    {
+        return $this->hasMany(Module::class);
+    }
+
+    public function tasks(): HasMany
+    {
+        return $this->hasMany(Task::class);
+    }
 }

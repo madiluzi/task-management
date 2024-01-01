@@ -19,7 +19,7 @@ export default function Detail(props) {
             id: 1,
             title: "Overview",
             // component: <OverviewTab data={projectDetail} kanbanItems={kanbanItems} />,
-            component: <OverviewTab data={props.pages} />,
+            component: <OverviewTab data={props.project} />,
         },
         {
             id: 2,
@@ -46,7 +46,7 @@ export default function Detail(props) {
     return (
         <AuthenticatedLayout
             user={props.auth.user}
-            header={<h2 className="text-xl font-semibold leading-tight text-gray-800">{props.project.title}</h2>}
+            header={<h2 className="text-xl font-semibold leading-tight text-slate-800">{props.project.title}</h2>}
         >
             <Head title={props.project.title} />
 

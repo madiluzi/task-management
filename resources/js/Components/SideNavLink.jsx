@@ -3,14 +3,14 @@ import ApplicationLogo from './ApplicationLogo';
 
 export default function SideNavLink({ active = false, className = '', children, ...props }) {
     return (
-        <li className='mb-2'>
+        <li className=''>
             <Link
                 {...props}
                 // href={route('dashboard')}
-                className={`flex items-center w-full px-4 py-3 text-sm font-medium rounded hover:text-slate-800 hover:bg-slate-300 hover:transition-all
+                className={`flex items-center w-full p-2 text-sm rounded hover:text-slate-800 hover:bg-slate-200 hover:transition-all
                     ${active
-                        ? 'bg-slate-600 text-white'
-                        : 'text-slate-400'}  ${className}
+                        ? 'text-slate-900 font-semibold bg-slate-200'
+                        : 'text-slate-600'}  ${className}
                 `}
             >
                 {children}

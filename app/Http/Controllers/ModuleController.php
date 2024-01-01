@@ -43,6 +43,7 @@ class ModuleController extends Controller
             'project_id' => 'required'
         ]);
 
+        $validated['slug'] = Str::slug($validated['title']);
         Module::create($validated);
         return redirect()->route('modules.index');
     }
@@ -52,8 +53,9 @@ class ModuleController extends Controller
      */
     public function show(Module $module)
     {
+        dd($module);
         return Inertia::render('Modules/Index', [
-            'modules' => Module::all(),
+            'modules' => $module,
         ]);
     }
 

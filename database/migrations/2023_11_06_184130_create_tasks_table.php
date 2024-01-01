@@ -16,6 +16,7 @@ return new class extends Migration
             $table->string('content');
             $table->foreignId('module_id')->nullable()->constrained()->cascadeOnDelete();
             $table->foreignId('project_id')->constrained()->cascadeOnDelete();
+            $table->foreignId('priority_id')->constrained()->cascadeOnDelete();
             $table->foreignId('status_id')->constrained()->cascadeOnDelete();
             $table->timestamps();
         });

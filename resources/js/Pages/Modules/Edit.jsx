@@ -27,7 +27,7 @@ export default function Edit(props) {
     return (
         <AuthenticatedLayout
             user={props.auth.user}
-            header={<h2 className="text-xl font-semibold leading-tight text-gray-800">Edit Module</h2>}
+            header={<h2 className="text-xl font-semibold leading-tight text-slate-800">Edit Module</h2>}
         >
             <Head title="Edit Module" />
 
@@ -36,16 +36,16 @@ export default function Edit(props) {
                     <form onSubmit={handleSubmit} encType="multipart/form-data">
                         <div className="grid grid-cols-2 gap-6">
                             <div className="mb-6">
-                                <label htmlFor="title" className="block mb-2 text-sm font-medium text-gray-900">Title</label>
+                                <label htmlFor="title" className="block mb-2 text-sm font-medium text-slate-900">Title</label>
                                 <input type="text" id="title" name="title"
-                                    className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
+                                    className="bg-slate-50 border border-slate-300 text-slate-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
                                     onChange={(e) => setData("title", e.target.value)}
                                     value={data.title}
                                     required />
                                 {props.errors.title && <span className='text-sm text-red-700'>{props.errors.title}</span>}
                             </div>
                             <div className="mb-6">
-                                <label htmlFor="project_id" className="block mb-2 text-sm font-medium text-gray-900">Project</label>
+                                <label htmlFor="project_id" className="block mb-2 text-sm font-medium text-slate-900">Project</label>
                                 <Select id="project_id"
                                     classNames={{
                                         control: (state) =>
@@ -59,7 +59,7 @@ export default function Edit(props) {
                             <input type='hidden' value={data.id} />
                         </div>
                         <button type="submit"
-                            className='inline-flex items-center px-4 py-2 text-xs font-semibold tracking-widest text-white uppercase transition duration-150 ease-in-out bg-gray-800 border border-transparent rounded-md hover:bg-gray-700 focus:bg-gray-700 active:bg-gray-900 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2'>
+                            className='inline-flex items-center px-4 py-2 text-xs font-semibold tracking-widest text-white uppercase transition duration-150 ease-in-out bg-slate-800 border border-transparent rounded-md hover:bg-slate-700 focus:bg-slate-700 active:bg-slate-900 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2'>
                             Submit</button>
                     </form>
                 </div>

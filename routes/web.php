@@ -34,9 +34,11 @@ Route::get('/dashboard', function () {
 })->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::resource('projects', ProjectController::class)
-    ->middleware(['auth', 'verified']);
+    ->middleware(['auth', 'verified'])
+    ->parameters(['projects' => 'project:slug']);
 Route::resource('modules', ModuleController::class)
-    ->middleware(['auth', 'verified']);
+    ->middleware(['auth', 'verified'])
+    ->parameters(['modules' => 'module:slug']);
 Route::resource('pages', PageController::class)
     ->middleware(['auth', 'verified']);
 Route::resource('tasks', TaskController::class)

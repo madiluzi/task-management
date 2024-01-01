@@ -14,9 +14,10 @@ return new class extends Migration
         Schema::create('projects', function (Blueprint $table) {
             $table->id();
             $table->string('title');
+            $table->string('slug');
             $table->foreignId('user_id')->constrained()->cascadeOnDelete();
-            $table->foreignId('status_id')->constrained()->cascadeOnDelete();
-            $table->foreignId('priority_id')->constrained()->cascadeOnDelete();
+            $table->foreignId('status_id')->nullable()->constrained()->cascadeOnDelete();
+            $table->foreignId('priority_id')->nullable()->constrained()->cascadeOnDelete();
             $table->timestamps();
         });
     }

@@ -15,17 +15,17 @@ export default function Index(props) {
     return (
         <AuthenticatedLayout
             user={props.auth.user}
-            header={<h2 className="text-xl font-semibold leading-tight text-gray-800">Tasks</h2>}
+            header={<h2 className="text-xl font-semibold leading-tight text-slate-800">Tasks</h2>}
         >
             <Head title="Tasks" />
             <div className="py-12">
                 <div className="mx-auto max-w-7xl sm:px-6 lg:px-8">
                     <Link href={route("tasks.create")} type="button"
-                        className="items-center inline-block px-4 py-2 mb-6 text-xs font-semibold tracking-widest text-white uppercase transition duration-150 ease-in-out bg-gray-800 border border-transparent rounded-md hover:bg-gray-700 focus:bg-gray-700 active:bg-gray-900 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2">
+                        className="items-center inline-block px-4 py-2 mb-6 text-xs font-semibold tracking-widest text-white uppercase transition duration-150 ease-in-out bg-slate-800 border border-transparent rounded-md hover:bg-slate-700 focus:bg-slate-700 active:bg-slate-900 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2">
                         Add Item</Link>
                     <div className="relative mb-6 overflow-x-auto">
-                        <table className="w-full text-sm text-left text-gray-500">
-                            <thead className="text-xs text-gray-700 uppercase bg-gray-50">
+                        <table className="w-full text-sm text-left text-slate-500">
+                            <thead className="text-xs text-slate-700 uppercase bg-slate-50">
                                 <tr>
                                     <th scope="col" className="px-6 py-3">
                                         #
@@ -67,7 +67,7 @@ export default function Index(props) {
                                                 </td>
                                             </tr>
                                         ) :
-                                        <tr><td>No Data Available</td></tr>
+                                        <tr><td>No Data Available Available</td></tr>
                                 }
                             </tbody>
                         </table>
